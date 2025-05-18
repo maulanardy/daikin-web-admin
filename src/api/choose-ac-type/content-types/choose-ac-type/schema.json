@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "choose_ac_types",
+  "info": {
+    "singularName": "choose-ac-type",
+    "pluralName": "choose-ac-types",
+    "displayName": "Choose AC Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "more_info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.instagram-embed",
+      "min": 1,
+      "max": 3
+    }
+  }
+}

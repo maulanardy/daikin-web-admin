@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "installations",
+  "info": {
+    "singularName": "installation",
+    "pluralName": "installations",
+    "displayName": "Installation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "more_info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.youtube-embed",
+      "min": 1,
+      "max": 1
+    }
+  }
+}

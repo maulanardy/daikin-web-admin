@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_youtube_embeds",
+  "info": {
+    "displayName": "Youtube embed",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "embed_code": {
+      "type": "richtext"
+    }
+  }
+}

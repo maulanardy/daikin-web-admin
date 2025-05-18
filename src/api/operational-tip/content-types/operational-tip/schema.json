@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "operational_tips",
+  "info": {
+    "singularName": "operational-tip",
+    "pluralName": "operational-tips",
+    "displayName": "Operational Tip"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "more_info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.instagram-embed",
+      "max": 3,
+      "min": 1
+    }
+  }
+}

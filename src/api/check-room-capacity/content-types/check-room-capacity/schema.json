@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "check_room_capacities",
+  "info": {
+    "singularName": "check-room-capacity",
+    "pluralName": "check-room-capacities",
+    "displayName": "Check Room Capacity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

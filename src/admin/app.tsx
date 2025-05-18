@@ -1,0 +1,58 @@
+import type { StrapiApp } from '@strapi/strapi/admin';
+
+export default {
+  config: {
+    locales: [
+      // 'ar',
+      // 'fr',
+      // 'cs',
+      // 'de',
+      // 'dk',
+      // 'es',
+      // 'he',
+      // 'id',
+      // 'it',
+      // 'ja',
+      // 'ko',
+      // 'ms',
+      // 'nl',
+      // 'no',
+      // 'pl',
+      // 'pt-BR',
+      // 'pt',
+      // 'ru',
+      // 'sk',
+      // 'sv',
+      // 'th',
+      // 'tr',
+      // 'uk',
+      // 'vi',
+      // 'zh-Hans',
+      // 'zh',
+    ],
+    translations: {
+      en: {
+        "Auth.form.welcome.title": "Welcome to Web Admin Page",
+        "Auth.form.welcome.subtitle": "Please login to continue",
+        "Auth.form.button.login": "Login",
+        "Auth.form.button.forgot-password": "Forgot password?",
+        "Auth.form.button.reset-password": "Reset password",
+        "Auth.form.button.back-to-login": "Back to login",
+        "Auth.form.button.send-email": "Send email",
+        "Auth.form.button.change-password": "Change password",
+        "Auth.form.button.reset-password-success": "Reset password success",
+        "Auth.form.button.reset-password-error": "Reset password error",
+        "Auth.form.button.reset-password-success.title": "Password reset",
+        "Auth.form.button.reset-password-success.subtitle": "Your password has been reset successfully",
+        "Auth.form.button.reset-password-error.title": "Password reset error",
+        "Auth.form.button.reset-password-error.subtitle": "An error occurred while resetting your password",
+        "Auth.form.button.reset-password-error.link": "Try again",
+        "Auth.form.button.reset-password-error.link.title": "Try again",
+        "Auth.form.button.reset-password-error.link.subtitle": "An error occurred while resetting your password",
+      },
+    },
+  },
+  bootstrap(app: StrapiApp) {
+    console.log(app);
+  },
+};

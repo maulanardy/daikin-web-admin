@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "daikin_ac_line_ups",
+  "info": {
+    "singularName": "daikin-ac-line-up",
+    "pluralName": "daikin-ac-line-ups",
+    "displayName": "Daikin AC Line up"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}
