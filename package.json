@@ -2,7 +2,7 @@
   "name": "daikin-web-admin",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Daikin backend application",
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.10.4",
+    "@strapi/plugin-documentation": "5.10.*",
     "@strapi/plugin-users-permissions": "5.10.4",
     "@strapi/strapi": "5.10.4",
     "fs-extra": "^10.0.0",
@@ -21,7 +22,6 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.30.0",
-    "strapi-plugin-navigation": "^3.0.11",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {

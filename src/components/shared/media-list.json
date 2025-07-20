@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_media_lists",
+  "info": {
+    "displayName": "Media List",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media"
+    }
+  }
+}

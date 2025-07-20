@@ -13,6 +13,17 @@ export interface SharedInstagramEmbed extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedInstagramList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_instagram_lists';
+  info: {
+    displayName: 'Instagram list';
+    icon: 'grid';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared.instagram-embed', true>;
+  };
+}
+
 export interface SharedManga extends Struct.ComponentSchema {
   collectionName: 'components_shared_manga';
   info: {
@@ -36,6 +47,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedMediaList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_lists';
+  info: {
+    description: '';
+    displayName: 'Media List';
+    icon: 'apps';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared.media', true>;
   };
 }
 
@@ -106,8 +129,10 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.instagram-embed': SharedInstagramEmbed;
+      'shared.instagram-list': SharedInstagramList;
       'shared.manga': SharedManga;
       'shared.media': SharedMedia;
+      'shared.media-list': SharedMediaList;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;

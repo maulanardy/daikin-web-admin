@@ -506,78 +506,11 @@ export interface ApiCalculatorCalculator extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiCheckRoomCapacityCheckRoomCapacity
-  extends Struct.SingleTypeSchema {
-  collectionName: 'check_room_capacities';
-  info: {
-    displayName: 'Check Room Capacity';
-    pluralName: 'check-room-capacities';
-    singularName: 'check-room-capacity';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::check-room-capacity.check-room-capacity'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiChooseAcTypeChooseAcType extends Struct.SingleTypeSchema {
-  collectionName: 'choose_ac_types';
-  info: {
-    description: '';
-    displayName: 'Choose AC Type';
-    pluralName: 'choose-ac-types';
-    singularName: 'choose-ac-type';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::choose-ac-type.choose-ac-type'
-    > &
-      Schema.Attribute.Private;
-    more_info: Schema.Attribute.Component<'shared.instagram-embed', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 3;
-          min: 1;
-        },
-        number
-      >;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiDaikinAcLineUpDaikinAcLineUp
   extends Struct.SingleTypeSchema {
   collectionName: 'daikin_ac_line_ups';
   info: {
+    description: '';
     displayName: 'Daikin AC Line up';
     pluralName: 'daikin-ac-line-ups';
     singularName: 'daikin-ac-line-up';
@@ -586,6 +519,16 @@ export interface ApiDaikinAcLineUpDaikinAcLineUp
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.DynamicZone<
+      [
+        'shared.youtube-embed',
+        'shared.slider',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.instagram-embed',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -636,44 +579,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiInstallationInstallation extends Struct.SingleTypeSchema {
-  collectionName: 'installations';
-  info: {
-    description: '';
-    displayName: 'Installation';
-    pluralName: 'installations';
-    singularName: 'installation';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::installation.installation'
-    > &
-      Schema.Attribute.Private;
-    more_info: Schema.Attribute.Component<'shared.youtube-embed', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 1;
-          min: 1;
-        },
-        number
-      >;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiMangaManga extends Struct.CollectionTypeSchema {
   collectionName: 'mangas';
   info: {
@@ -710,74 +615,42 @@ export interface ApiMangaManga extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiOperationalTipOperationalTip
-  extends Struct.SingleTypeSchema {
-  collectionName: 'operational_tips';
+export interface ApiSectionSection extends Struct.CollectionTypeSchema {
+  collectionName: 'sections';
   info: {
-    displayName: 'Operational Tip';
-    pluralName: 'operational-tips';
-    singularName: 'operational-tip';
+    description: '';
+    displayName: 'Section';
+    pluralName: 'sections';
+    singularName: 'section';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.DynamicZone<
+      [
+        'shared.youtube-embed',
+        'shared.slider',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.instagram-embed',
+        'shared.instagram-list',
+        'shared.media-list',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
+    description: Schema.Attribute.Text;
+    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::operational-tip.operational-tip'
+      'api::section.section'
     > &
       Schema.Attribute.Private;
-    more_info: Schema.Attribute.Component<'shared.instagram-embed', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 3;
-          min: 1;
-        },
-        number
-      >;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiRegularMaintenanceRegularMaintenance
-  extends Struct.SingleTypeSchema {
-  collectionName: 'regular_maintenances';
-  info: {
-    displayName: 'Regular Maintenance';
-    pluralName: 'regular-maintenances';
-    singularName: 'regular-maintenance';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::regular-maintenance.regular-maintenance'
-    > &
-      Schema.Attribute.Private;
-    more_info: Schema.Attribute.Component<'shared.youtube-embed', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 1;
-          min: 1;
-        },
-        number
-      >;
+    number: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -919,159 +792,6 @@ export interface PluginI18NLocale extends Struct.CollectionTypeSchema {
         number
       >;
     publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginNavigationAudience extends Struct.CollectionTypeSchema {
-  collectionName: 'audience';
-  info: {
-    displayName: 'Audience';
-    name: 'audience';
-    pluralName: 'audiences';
-    singularName: 'audience';
-  };
-  options: {
-    comment: 'Audience';
-    draftAndPublish: false;
-    increments: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    key: Schema.Attribute.UID<'name'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::navigation.audience'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginNavigationNavigation
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'navigations';
-  info: {
-    displayName: 'Navigation';
-    name: 'navigation';
-    pluralName: 'navigations';
-    singularName: 'navigation';
-  };
-  options: {
-    comment: '';
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    items: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::navigation.navigation-item'
-    >;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::navigation.navigation'
-    >;
-    name: Schema.Attribute.Text & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    visible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-  };
-}
-
-export interface PluginNavigationNavigationItem
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'navigations_items';
-  info: {
-    displayName: 'Navigation Item';
-    name: 'navigation-item';
-    pluralName: 'navigation-items';
-    singularName: 'navigation-item';
-  };
-  options: {
-    comment: 'Navigation Item';
-    draftAndPublish: false;
-    increments: true;
-    timestamps: true;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-    i18n: {
-      localized: false;
-    };
-  };
-  attributes: {
-    additionalFields: Schema.Attribute.JSON & Schema.Attribute.DefaultTo<{}>;
-    audience: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::navigation.audience'
-    >;
-    autoSync: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    collapsed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    externalPath: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::navigation.navigation-item'
-    > &
-      Schema.Attribute.Private;
-    master: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::navigation.navigation'
-    >;
-    menuAttached: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    parent: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::navigation.navigation-item'
-    >;
-    path: Schema.Attribute.Text;
-    publishedAt: Schema.Attribute.DateTime;
-    related: Schema.Attribute.Relation<'morphToMany'> &
-      Schema.Attribute.Required;
-    title: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    type: Schema.Attribute.Enumeration<['INTERNAL', 'EXTERNAL', 'WRAPPER']> &
-      Schema.Attribute.DefaultTo<'INTERNAL'>;
-    uiRouterKey: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1452,20 +1172,13 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::banner.banner': ApiBannerBanner;
       'api::calculator.calculator': ApiCalculatorCalculator;
-      'api::check-room-capacity.check-room-capacity': ApiCheckRoomCapacityCheckRoomCapacity;
-      'api::choose-ac-type.choose-ac-type': ApiChooseAcTypeChooseAcType;
       'api::daikin-ac-line-up.daikin-ac-line-up': ApiDaikinAcLineUpDaikinAcLineUp;
       'api::global.global': ApiGlobalGlobal;
-      'api::installation.installation': ApiInstallationInstallation;
       'api::manga.manga': ApiMangaManga;
-      'api::operational-tip.operational-tip': ApiOperationalTipOperationalTip;
-      'api::regular-maintenance.regular-maintenance': ApiRegularMaintenanceRegularMaintenance;
+      'api::section.section': ApiSectionSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
-      'plugin::navigation.audience': PluginNavigationAudience;
-      'plugin::navigation.navigation': PluginNavigationNavigation;
-      'plugin::navigation.navigation-item': PluginNavigationNavigationItem;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
       'plugin::upload.file': PluginUploadFile;

@@ -1,10 +1,10 @@
 {
-  "kind": "singleType",
-  "collectionName": "daikin_ac_line_ups",
+  "kind": "collectionType",
+  "collectionName": "sections",
   "info": {
-    "singularName": "daikin-ac-line-up",
-    "pluralName": "daikin-ac-line-ups",
-    "displayName": "Daikin AC Line up",
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "Section",
     "description": ""
   },
   "options": {
@@ -15,7 +15,7 @@
       "type": "string"
     },
     "description": {
-      "type": "blocks"
+      "type": "text"
     },
     "content": {
       "type": "dynamiczone",
@@ -25,8 +25,16 @@
         "shared.rich-text",
         "shared.quote",
         "shared.media",
-        "shared.instagram-embed"
+        "shared.instagram-embed",
+        "shared.instagram-list",
+        "shared.media-list"
       ]
+    },
+    "number": {
+      "type": "integer"
+    },
+    "label": {
+      "type": "string"
     }
   }
 }

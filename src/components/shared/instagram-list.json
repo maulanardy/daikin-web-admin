@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_instagram_lists",
+  "info": {
+    "displayName": "Instagram list",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.instagram-embed"
+    }
+  }
+}

@@ -3,8 +3,8 @@
  * Any modifications made will be discarded.
  */
 import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
+import documentation from "@strapi/plugin-documentation/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
-import navigation from "strapi-plugin-navigation/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 import customisations from "../../src/admin/app.tsx";
@@ -14,7 +14,7 @@ renderAdmin(document.getElementById("strapi"), {
 
   plugins: {
     "strapi-cloud": strapiCloud,
+    documentation: documentation,
     "users-permissions": usersPermissions,
-    navigation: navigation,
   },
 });
