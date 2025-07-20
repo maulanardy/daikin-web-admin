@@ -27,13 +27,18 @@
         "shared.media",
         "shared.instagram-embed",
         "shared.instagram-list",
-        "shared.media-list"
+        "shared.media-list",
+        "shared.call-to-action-button",
+        "shared.media-group"
       ]
     },
     "number": {
       "type": "integer"
     },
     "label": {
+      "type": "string"
+    },
+    "bgcolor": {
       "type": "string"
     }
   }

@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_static_contents",
+  "info": {
+    "singularName": "home-static-content",
+    "pluralName": "home-static-contents",
+    "displayName": "Home Static Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.youtube-embed",
+        "shared.slider",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media",
+        "shared.media-list",
+        "shared.instagram-list",
+        "shared.instagram-embed"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "bgcolor": {
+      "type": "string"
+    }
+  }
+}

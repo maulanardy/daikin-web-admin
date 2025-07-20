@@ -579,6 +579,49 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeStaticContentHomeStaticContent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'home_static_contents';
+  info: {
+    description: '';
+    displayName: 'Home Static Content';
+    pluralName: 'home-static-contents';
+    singularName: 'home-static-content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bgcolor: Schema.Attribute.String;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'shared.youtube-embed',
+        'shared.slider',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.media-list',
+        'shared.instagram-list',
+        'shared.instagram-embed',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-static-content.home-static-content'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMangaManga extends Struct.CollectionTypeSchema {
   collectionName: 'mangas';
   info: {
@@ -627,6 +670,7 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    bgcolor: Schema.Attribute.String;
     content: Schema.Attribute.DynamicZone<
       [
         'shared.youtube-embed',
@@ -637,6 +681,8 @@ export interface ApiSectionSection extends Struct.CollectionTypeSchema {
         'shared.instagram-embed',
         'shared.instagram-list',
         'shared.media-list',
+        'shared.call-to-action-button',
+        'shared.media-group',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1174,6 +1220,7 @@ declare module '@strapi/strapi' {
       'api::calculator.calculator': ApiCalculatorCalculator;
       'api::daikin-ac-line-up.daikin-ac-line-up': ApiDaikinAcLineUpDaikinAcLineUp;
       'api::global.global': ApiGlobalGlobal;
+      'api::home-static-content.home-static-content': ApiHomeStaticContentHomeStaticContent;
       'api::manga.manga': ApiMangaManga;
       'api::section.section': ApiSectionSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;

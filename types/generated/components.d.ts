@@ -1,5 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedCallToActionButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_call_to_action_buttons';
+  info: {
+    description: '';
+    displayName: 'Call to Action Button';
+    icon: 'oneWay';
+  };
+  attributes: {
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    open_in: Schema.Attribute.Enumeration<
+      ['THIS_TAB', 'NEW_TAB', 'NEW_WINDOW']
+    >;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedInstagramEmbed extends Struct.ComponentSchema {
   collectionName: 'components_shared_instagram_embeds';
   info: {
@@ -47,6 +63,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedMediaGroup extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_groups';
+  info: {
+    displayName: 'Media Group';
+    icon: 'bulletList';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared.media-list', true>;
   };
 }
 
@@ -128,10 +155,12 @@ export interface SharedYoutubeEmbed extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.call-to-action-button': SharedCallToActionButton;
       'shared.instagram-embed': SharedInstagramEmbed;
       'shared.instagram-list': SharedInstagramList;
       'shared.manga': SharedManga;
       'shared.media': SharedMedia;
+      'shared.media-group': SharedMediaGroup;
       'shared.media-list': SharedMediaList;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_call_to_action_buttons",
+  "info": {
+    "displayName": "Call to Action Button",
+    "icon": "oneWay",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "open_in": {
+      "type": "enumeration",
+      "enum": [
+        "THIS_TAB",
+        "NEW_TAB",
+        "NEW_WINDOW"
+      ]
+    }
+  }
+}

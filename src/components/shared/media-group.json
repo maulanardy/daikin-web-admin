@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_media_groups",
+  "info": {
+    "displayName": "Media Group",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media-list"
+    }
+  }
+}
