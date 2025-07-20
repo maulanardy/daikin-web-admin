@@ -14,8 +14,7 @@
     "page": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.manga",
-      "max": 1
+      "component": "shared.manga"
     },
     "title": {
       "type": "string"
@@ -26,16 +25,27 @@
     },
     "coming_soon": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
+      ]
+    },
+    "icon": {
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

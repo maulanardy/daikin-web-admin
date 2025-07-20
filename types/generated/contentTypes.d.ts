@@ -622,6 +622,51 @@ export interface ApiHomeStaticContentHomeStaticContent
   };
 }
 
+export interface ApiMangaIntroductionMangaIntroduction
+  extends Struct.SingleTypeSchema {
+  collectionName: 'manga_introductions';
+  info: {
+    displayName: 'manga-introduction';
+    pluralName: 'manga-introductions';
+    singularName: 'manga-introduction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bgcolor: Schema.Attribute.String;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'shared.media',
+        'shared.media-list',
+        'shared.quote',
+        'shared.youtube-embed',
+        'shared.slider',
+        'shared.seo',
+        'shared.rich-text',
+        'shared.media-group',
+        'shared.instagram-list',
+        'shared.instagram-embed',
+        'shared.call-to-action-button',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::manga-introduction.manga-introduction'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMangaManga extends Struct.CollectionTypeSchema {
   collectionName: 'mangas';
   info: {
@@ -635,20 +680,15 @@ export interface ApiMangaManga extends Struct.CollectionTypeSchema {
   };
   attributes: {
     active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    coming_soon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    coming_soon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::manga.manga'> &
       Schema.Attribute.Private;
-    page: Schema.Attribute.Component<'shared.manga', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 1;
-        },
-        number
-      >;
+    page: Schema.Attribute.Component<'shared.manga', true>;
     publishedAt: Schema.Attribute.DateTime;
     thumbnail: Schema.Attribute.Media<'images' | 'files'>;
     title: Schema.Attribute.String;
@@ -1221,6 +1261,7 @@ declare module '@strapi/strapi' {
       'api::daikin-ac-line-up.daikin-ac-line-up': ApiDaikinAcLineUpDaikinAcLineUp;
       'api::global.global': ApiGlobalGlobal;
       'api::home-static-content.home-static-content': ApiHomeStaticContentHomeStaticContent;
+      'api::manga-introduction.manga-introduction': ApiMangaIntroductionMangaIntroduction;
       'api::manga.manga': ApiMangaManga;
       'api::section.section': ApiSectionSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;

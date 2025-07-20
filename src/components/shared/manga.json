@@ -2,26 +2,22 @@
   "collectionName": "components_shared_manga",
   "info": {
     "displayName": "manga",
-    "icon": "discuss"
+    "icon": "discuss",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "content": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "title": {
-      "type": "string"
+      ]
     },
     "page": {
       "type": "integer"
-    },
-    "external_link": {
-      "type": "text"
     },
     "active": {
       "type": "boolean",

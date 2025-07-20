@@ -43,15 +43,14 @@ export interface SharedInstagramList extends Struct.ComponentSchema {
 export interface SharedManga extends Struct.ComponentSchema {
   collectionName: 'components_shared_manga';
   info: {
+    description: '';
     displayName: 'manga';
     icon: 'discuss';
   };
   attributes: {
     active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     content: Schema.Attribute.Media<'images' | 'files'>;
-    external_link: Schema.Attribute.Text;
     page: Schema.Attribute.Integer;
-    title: Schema.Attribute.String;
   };
 }
 

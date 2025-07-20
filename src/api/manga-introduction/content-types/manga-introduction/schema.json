@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "manga_introductions",
+  "info": {
+    "singularName": "manga-introduction",
+    "pluralName": "manga-introductions",
+    "displayName": "manga-introduction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.media",
+        "shared.media-list",
+        "shared.quote",
+        "shared.youtube-embed",
+        "shared.slider",
+        "shared.seo",
+        "shared.rich-text",
+        "shared.media-group",
+        "shared.instagram-list",
+        "shared.instagram-embed",
+        "shared.call-to-action-button"
+      ]
+    }
+  }
+}
