@@ -25,6 +25,9 @@
     },
     "height": {
       "type": "integer"
+    },
+    "max_width": {
+      "type": "string"
     }
   }
 }
