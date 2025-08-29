@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-18T18:17:20.931Z"
+    "x-generation-date": "2025-08-24T16:30:14.028Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5904,6 +5904,15 @@
           },
           "max_width": {
             "type": "string"
+          },
+          "class": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "attribute": {
+            "type": "string"
           }
         }
       },
@@ -5927,6 +5936,9 @@
           },
           "bgcolor": {
             "type": "string"
+          },
+          "class": {
+            "type": "string"
           }
         }
       },
@@ -5946,6 +5958,9 @@
             "type": "string"
           },
           "bgcolor": {
+            "type": "string"
+          },
+          "class": {
             "type": "string"
           }
         }
@@ -10357,6 +10372,9 @@
           },
           "bgcolor": {
             "type": "string"
+          },
+          "class": {
+            "type": "string"
           }
         }
       },
@@ -10425,6 +10443,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "episode": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -10764,6 +10785,9 @@
               }
             }
           },
+          "episode": {
+            "type": "integer"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -11084,6 +11108,9 @@
                       }
                     }
                   }
+                },
+                "episode": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",
@@ -11687,6 +11714,12 @@
             "items": {
               "$ref": "#/components/schemas/SharedMediaListComponent"
             }
+          },
+          "class": {
+            "type": "string"
+          },
+          "bgcolor": {
+            "type": "string"
           }
         }
       },

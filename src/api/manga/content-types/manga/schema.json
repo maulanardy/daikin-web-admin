@@ -46,6 +46,9 @@
         "videos",
         "audios"
       ]
+    },
+    "episode": {
+      "type": "integer"
     }
   }
 }

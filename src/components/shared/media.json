@@ -28,6 +28,15 @@
     },
     "max_width": {
       "type": "string"
+    },
+    "class": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "attribute": {
+      "type": "text"
     }
   }
 }

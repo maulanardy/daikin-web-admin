@@ -62,10 +62,13 @@ export interface SharedMedia extends Struct.ComponentSchema {
     icon: 'file-video';
   };
   attributes: {
+    attribute: Schema.Attribute.Text;
+    class: Schema.Attribute.String;
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     height: Schema.Attribute.Integer;
     max_width: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
     width: Schema.Attribute.Integer;
   };
 }
@@ -73,10 +76,13 @@ export interface SharedMedia extends Struct.ComponentSchema {
 export interface SharedMediaGroup extends Struct.ComponentSchema {
   collectionName: 'components_shared_media_groups';
   info: {
+    description: '';
     displayName: 'Media Group';
     icon: 'bulletList';
   };
   attributes: {
+    bgcolor: Schema.Attribute.String;
+    class: Schema.Attribute.String;
     items: Schema.Attribute.Component<'shared.media-list', true>;
   };
 }
@@ -90,6 +96,7 @@ export interface SharedMediaList extends Struct.ComponentSchema {
   };
   attributes: {
     bgcolor: Schema.Attribute.String;
+    class: Schema.Attribute.String;
     items: Schema.Attribute.Component<'shared.media', true>;
   };
 }
@@ -104,6 +111,7 @@ export interface SharedQuote extends Struct.ComponentSchema {
   attributes: {
     bgcolor: Schema.Attribute.String;
     body: Schema.Attribute.Text;
+    class: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -118,6 +126,7 @@ export interface SharedRichText extends Struct.ComponentSchema {
   attributes: {
     bgcolor: Schema.Attribute.String;
     body: Schema.Attribute.RichText;
+    class: Schema.Attribute.String;
   };
 }
 

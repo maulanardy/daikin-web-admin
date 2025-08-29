@@ -15,6 +15,9 @@
     },
     "bgcolor": {
       "type": "string"
+    },
+    "class": {
+      "type": "string"
     }
   }
 }
